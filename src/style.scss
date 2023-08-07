@@ -18,8 +18,49 @@ body {
 }
 
 .topbar-menu {
-    height: 20px;
+    min-height: 30px;
     width: 100%;
     background-color: peachpuff;
     display: flex;
+    align-items: center;
+
+    &__left {
+        gap: 5px;
+    }
+}
+
+button {
+    padding: 2.5px 5px;
+}
+
+.menu {
+    display: grid;
+    place-items: center;
+    height: 30px;
+    max-height: 40px;
+    max-width: 50px;
+}
+
+box-icon[name="home"] {
+    height: 90%;
+}
+
+button[type='submit'] {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+.testing {
+    display: flex;
+    justify-content: center;
+
+    &::after {
+        content: 'TEST';
+        height: 100%;
+        width: 100%;
+        border: 1px solid limegreen;
+        position: absolute;
+        display: block;
+    }
 }
