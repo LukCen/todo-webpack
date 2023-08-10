@@ -1,5 +1,5 @@
 "use strict";
-import { addBoxicon } from "./addBoxicon";
+
 import { addElements } from "./addElements";
 
 export function addClasses(element, classes) {
@@ -18,52 +18,90 @@ export function renderTopbar(content) {
    // create the two sections containing navigation and interaction elements
 
    const topbarLeft = document.createElement("div");
-   const menuButton = document.createElement("button");
-   menuButton.classList.add("menu");
-   addBoxicon(menuButton, "menu");
+   //
 
-   // array of all elements meant to be in the navbar up top =
+   // array of all elements meant to be in the navbar up top - left side =
    let buttonGroupLeft = [
+      // menu button
+      {
+         tag: "button",
+         classes: ["menu"],
+         text: [
+            {
+               tag: "box-icon",
+               classes: "",
+               attrs: [
+                  {
+                     name: "name",
+                     value: "menu",
+                  },
+               ],
+            },
+         ],
+      },
       {
          // home button
          tag: "button",
          classes: ["menu"],
-         text: {
-            tag: "box-icon",
-            classes: "",
-            attrs: [
-               {
-                  name: "name",
-                  value: "home",
-               },
-               {
-                  name: "size",
-                  value: "cssSize",
-               },
-            ],
-         },
+         text: [
+            {
+               tag: "box-icon",
+               classes: "",
+               attrs: [
+                  {
+                     name: "name",
+                     value: "home",
+                  },
+                  {
+                     name: "size",
+                     value: "cssSize",
+                  },
+               ],
+            },
+         ],
+
          attrs: "",
       },
       {
          // search bar
-         tag: "input",
-         classes: "",
-         text: "",
-         attrs: [
+         tag: "div",
+         classes: ["searchbar-container"],
+         text: [
             {
-               name: "placeholder",
-               value: "Test value",
+               tag: "input",
+               classes: "",
+               attrs: [
+                  {
+                     name: "placeholder",
+                     value: "Search...",
+                  },
+                  {
+                     name: "type",
+                     value: "search",
+                  },
+               ],
             },
             {
-               name: "type",
-               value: "search",
+               tag: "button",
+               classes: ["searchbar-button"],
+               text: [
+                  {
+                     tag: "box-icon",
+                     classes: "",
+                     attrs: [
+                        {
+                           name: "name",
+                           value: "search",
+                        },
+                     ],
+                  },
+               ],
             },
          ],
+
+         attrs: "",
       },
    ];
-   topbarLeft.append(menuButton);
-   let rocket = document.createElement("box-icon");
-   rocket.setAttribute("name", "rocket");
 
    addElements(topbarLeft, buttonGroupLeft);
 

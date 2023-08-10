@@ -1,8 +1,8 @@
 import "./style.scss";
-import 'boxicons';
+import "boxicons";
 
-import {renderHomepage} from './homepage.js'
+import { renderHomepage } from "./homepage.js";
 
-let content = document.querySelector('#content')
+let content = document.querySelector("#content");
 
-renderHomepage(content)
+renderHomepage(content);
