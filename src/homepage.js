@@ -1,7 +1,8 @@
 "use strict";
 
 import { addElements } from "./addElements.js";
-import { createProjects, createProjectWindow } from "./createProject.js";
+import { createProjectWindow } from "./createProject.js";
+
 const containerContent = document.createElement("div");
 containerContent.classList.add("container-main-content");
 export function addClasses(element, classes) {
